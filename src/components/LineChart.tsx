@@ -1,11 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
 
-const LineChart = () => {
-    const [device, setDevice] = useState("Desktop");
+interface ChartData {
+    name: string;
+    data: number[];
+}
 
+const LineChart: React.FC = () => {
+    const [device, setDevice] = useState<"Desktop" | "Mobile">("Desktop");
 
-    const getChartDataForDevice = () => {
+    const getChartDataForDevice = (): ChartData[] => {
         if (device === "Desktop") {
             return [
                 {
@@ -40,7 +45,7 @@ const LineChart = () => {
         }
     };
 
-    const chartData = {
+    const chartData: { series: ChartData[]; options: ApexOptions } = {
         series: getChartDataForDevice(),
         options: {
             chart: {
@@ -99,7 +104,7 @@ const LineChart = () => {
                 },
             },
             legend: {
-                tooltipHoverFormatter: function (val, opts) {
+                tooltipHoverFormatter: function (val: string, opts: any) {
                     return (
                         val +
                         " - <strong>" +
@@ -150,34 +155,26 @@ const LineChart = () => {
                 y: [
                     {
                         title: {
-                            formatter: function (val) {
+                            formatter: function (val: string) {
                                 return val + " (mins)";
                             },
                         },
                     },
                     {
                         title: {
-                            formatter: function (val) {
+                            formatter: function (val: string) {
                                 return val + " per session";
                             },
-                        },
-                        style: {
-                            color: "#FFFFFF",
                         },
                     },
                     {
                         title: {
-                            formatter: function (val) {
+                            formatter: function (val: string) {
                                 return val;
                             },
                         },
                     },
                 ],
-                style: {
-                    fontSize: "12px",
-                    fontFamily: undefined,
-                    colors: "#00000",
-                },
             },
             grid: {
                 borderColor: "#f1f1f1",
@@ -238,8 +235,6 @@ const LineChart = () => {
                     ✨Select which stat to see
                 </div>
             </div>
-
-
         </div>
     );
 };
