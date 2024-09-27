@@ -123,8 +123,8 @@ const BarChart: React.FC = () => {
     };
 
     return (
-        <div className="bg-neutral-900 text-white flex flex-col items-center justify-center w-full h-screen">
-            <div className="w-full sm:w-3/4 lg:w-1/2">
+        <div className="bg-neutral-900 text-white flex flex-col items-center justify-center w-full h-screen ">
+            <div className="w-full sm:w-3/4 lg:w-1/2 border mt-20">
                 <ReactApexChart
                     options={chartData.options}
                     series={chartData.series}
