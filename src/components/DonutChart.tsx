@@ -76,7 +76,7 @@ export function DonutChart() {
 
 
         <div className="bg-neutral-900 text-white mt-20 flex items-center justify-center">
-            <Card data-chart={id} className="flex flex-col bg-netral-900 text-white   px-2 max-w-[30rem] border rounded-none p-3">
+            <Card data-chart={id} className="flex flex-col bg-netral-900 text-white   px-2 min-w-[400px] border rounded-none p-3">
                 <ChartStyle id={id} config={chartConfig} />
                 <CardHeader className="flex-row items-start space-y-0 pb-0">
                     <div className="grid gap-1">

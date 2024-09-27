@@ -9,9 +9,10 @@ export default function App() {
       <LineChart />
       <BarChart />
       <DonutChart />
-      <div className="fixed top-5 left-5  rounded-full  border p-3">
-        <a href="https://github.com/Shrived00/chart.git" className="text-white hover:text-blue-400">
+      <div className="fixed top-5 left-5  ">
+        <a href="https://github.com/Shrived00/chart.git" className="text-black hover:text-blue-400  bg-white rounded-full  border p-3 flex  ">
           <Github size={24} />
+          <div className="">Github</div>
         </a>
       </div>
     </div>
